@@ -18,9 +18,8 @@ $router->get('/', function () use ($router) {
 });
 
 $router->get('/data', function () use ($router) {
-    $results = app('db')->select("SELECT * FROM pengguna");
-    $results2 = app('db')->select("SELECT * FROM pengaduan");
-    return response()->json($results,$results2);
+    $results = app('db')->select("SELECT * FROM instansi");
+    return response()->json($results);
 });
 
 $router->post('/register', 'UserController@register');
